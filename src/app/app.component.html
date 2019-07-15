@@ -1,0 +1,57 @@
+<hello name="{{ name }}"></hello>
+
+<form [formGroup]="myForm">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col" *ngFor = "let pizzaSize of pizzaSizes">{{pizzaSize.name}}</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">Veg Toppings</th>
+    </tr>
+      <!-- veggie -->
+      <tr *ngFor = "let pizzaToppingsVeggie of pizzaToppingsVeggies">
+        <th scope="row">{{pizzaToppingsVeggie.name}}</th>
+        <th scope="col"><input type="checkbox" (change)="onChange(pizzaToppingsVeggie.price, $event.target.checked,'small',pizzaToppingsVeggie.name)"></th>
+        <th scope="col"><input type="checkbox" (change)="onChange(pizzaToppingsVeggie.price, $event.target.checked,'medium',pizzaToppingsVeggie.name)"></th>
+        <th scope="col"><input type="checkbox" (change)="onChange(pizzaToppingsVeggie.price, $event.target.checked,'large',pizzaToppingsVeggie.name)"></th>
+        <th scope="col"><input type="checkbox" (change)="onChange(pizzaToppingsVeggie.price, $event.target.checked,'Extra large',pizzaToppingsVeggie.name)"></th>
+      </tr>
+      <tr>
+        <th scope="row">Non Veg Toppings</th>
+      </tr>
+      <!-- Meats -->
+      <tr *ngFor = "let pizzaToppingMeat of pizzaToppingMeats">
+        <th scope="row">{{pizzaToppingMeat.name}}</th>
+        <th scope="col"><input type="checkbox" (change)="onChange(pizzaToppingMeat.price, $event.target.checked,'small',pizzaToppingMeat.name)"></th>
+        <th scope="col"><input type="checkbox" (change)="onChange(pizzaToppingMeat.price, $event.target.checked,'medium',pizzaToppingMeat.name)"></th>
+        <th scope="col"><input type="checkbox" (change)="onChange(pizzaToppingMeat.price, $event.target.checked,'large',pizzaToppingMeat.name)"></th>
+        <th scope="col"><input type="checkbox" (change)="onChange(pizzaToppingMeat.price, $event.target.checked,'Extra large',pizzaToppingMeat.name)"></th>
+      </tr>
+      <!-- Total -->
+      <tr>
+        <th scope="row">Total</th>
+        
+      </tr>
+      <!-- Offers -->
+      <tr>
+        <th scope="row">Offers</th>
+        <th scope="col">Offer 1  <input type="checkbox" (change)="offer1($event.target.checked)"></th>
+        <th scope="col">Offer 2  <input type="checkbox" (change)="offer2($event.target.checked)"></th>
+        <th scope="col">Offer 3  <input type="checkbox" (change)="offer3($event.target.checked)"></th>
+
+        <th scope="col"></th>
+      </tr>
+      <!-- Total -->
+      <tr>
+        <th scope="row"></th>
+        <th scope="col" ng-if="this.TotalAmount > 0">{{ '$' + this.TotalAmount}} </th>
+        <th scope="col">{{ '$' + this.TotalAmount2}} </th>
+        <th scope="col" >{{ this.TotalAmount3.undefined !== undefined ? '$' + this.TotalAmount3.undefined: '$' + 0 }} </th>
+        <th scope="col">{{ '$' + this.TotalAmount4}} </th>
+      </tr>
+    </tbody>
+  </table>
+</form>
