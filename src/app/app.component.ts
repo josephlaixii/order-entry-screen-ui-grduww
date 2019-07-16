@@ -44,6 +44,7 @@ export class AppComponent {
     }
   }
   offer2(isChecked: boolean){
+    this
     if (isChecked && this.Totalemails2.length == 8) {
     this.TotalAmount2 = 9
     }else{
@@ -66,7 +67,7 @@ export class AppComponent {
     });
 
     console.log("dsadsada" + index + " " + index2);
-    if (isChecked && index > -1  && index2 > -1 && this.Totalemails3.length == 2 || isChecked && index > -1 && this.Totalemails3.length == 4 ||  isChecked && index2 > -1 && this.Totalemails3.length == 4 || isChecked && this.TotalAmount3.length ==4 ) {
+    if (isChecked && index > -1  && index2 > -1 && this.Totalemails3.length == 2 || isChecked && index > -1 && this.Totalemails3.length == 4 ||  isChecked && index2 > -1 && this.Totalemails3.length == 4 || isChecked && this.Totalemails3.length == 4 && index <=-1  && index2 <= -1) {
       this.TotalAmount3.undefined =  this.TotalAmount3.undefined /2
     }else{
       this.TotalAmount3 = this.Totalemails3.reduce((c, v) => {
@@ -121,6 +122,8 @@ export class AppComponent {
     console.log(JSON.stringify(this.TotalAmount3.undefined));
     console.log(this.TotalAmount4 = this.Totalemails4.reduce((a, b) => a + b, 0) > 0 ? this.TotalAmount4 =this.Totalemails4.reduce((a, b) => a + b, 9) :0)
     console.log(JSON.stringify(this.Totalemails3))
+    console.log(this.Totalemails3.length)
+
   }
 
 }
