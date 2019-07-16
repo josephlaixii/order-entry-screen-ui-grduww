@@ -67,7 +67,7 @@ export class AppComponent {
     });
 
     console.log("dsadsada" + index + " " + index2);
-    if (isChecked && index > -1  && index2 > -1 && this.Totalemails3.length == 2 || isChecked && index > -1 && this.Totalemails3.length == 4 ||  isChecked && index2 > -1 && this.Totalemails3.length == 4 || isChecked && this.Totalemails3.length == 4 && index <=-1  && index2 <= -1) {
+    if (isChecked && index > -1  && index2 > -1 && this.Totalemails3.length == 2 || isChecked && index > -1 && this.Totalemails3.length == 3 ||  isChecked && index2 > -1 && this.Totalemails3.length == 3 || isChecked && this.Totalemails3.length == 4 && index <=-1  && index2 <= -1) {
       this.TotalAmount3.undefined =  this.TotalAmount3.undefined /2
     }else{
       this.TotalAmount3 = this.Totalemails3.reduce((c, v) => {
